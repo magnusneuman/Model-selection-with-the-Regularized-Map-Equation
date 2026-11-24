@@ -13,7 +13,7 @@ The notebook shows the one-step approach from the paper on synthetic correlation
 3. Scan thresholds and pick the one that compresses the description length most.
 4. Infer the clusters at that threshold and compare them with the planted structure using the adjusted mutual information (AMI).
 
-Thresholding is done on the absolute correlation, so negative correlations are kept.
+Two features are linked when their correlation passes the threshold, `r > tau`, so only positive correlations form links. This is the rule the paper uses for the synthetic data. For gene expression data the paper uses the absolute correlation, `|r| > tau`, as in unsigned co-expression networks. `build_network(..., signed=False)` gives that rule.
 
 ## Requirements
 
